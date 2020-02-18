@@ -7,9 +7,22 @@ import { Employes } from '../models/employes';
 })
 export class EmployesService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  ToutAfficher(){
+  ToutAfficher() {
     return this.http.get<Employes[]>("http://localhost:8080/employes").pipe()
   }
+  RecupUn(id: number) {
+    return this.http.get<Employes>("http://localhost:8080/employes/" + id).pipe()
+  }
+  ajouter(employes: Employes) {
+    return this.http.post("http://localhost:8080/employes",employes).pipe();
+  }
+  MettreAjour(id: number, employes: Employes) {
+    return this.http.put("http://localhost:8080/employes/"+id,employes).pipe();
+  }
+  supprimer(id: number) {
+    return this.http.delete("http://localhost:8080/reservation/"+id).pipe()
+  }
+
 }
