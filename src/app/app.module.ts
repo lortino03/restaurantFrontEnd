@@ -9,6 +9,8 @@ import { TablesComponent } from './tables/tables.component';
 import { EmployesComponent } from './employes/employes.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { PlatsComponent } from './plats/plats.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PlatsComponent } from './plats/plats.component';
     TablesComponent,
     EmployesComponent,
     ReservationComponent,
-    PlatsComponent
+    PlatsComponent,
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
