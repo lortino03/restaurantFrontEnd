@@ -28,7 +28,7 @@ export class ClientsComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
-
+        this.ngOnInit()
       }
     )
   }

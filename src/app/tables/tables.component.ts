@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Tables } from '../models/tables';
+import { Employes } from '../models/employes';
+import { TablesService } from '../services/tables.service';
+import { EmployesService } from '../services/employes.service';
+import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-tables',
@@ -7,9 +13,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablesComponent implements OnInit {
 
-  constructor() { }
+  newTable: Tables= new Tables();
+  newEmployes:Employes=new Employes();
+  listEmployes: Employes[]=[];
+  idEmploye: number;
 
-  ngOnInit() {
+  constructor(private tableService:TablesService, private employesService:EmployesService, private route:ActivatedRoute) { 
+    this.idEmploye=parseInt(this.route.snapshot.paramMap.get('idTables'))
   }
 
+  ngOnInit() {
+    this.employesService.ToutAfficher().subscribe(
+    data=>{
+      this.listEmployes=data;
+      console.log(data);
+    }
+    )
+  }
+AjouterTables(){
+  this.employesService.RecupUn(this.idEmploye).subscribe(
+    data=>{
+      this.newEmployes=data;
+      this.newTable.employes=this.newEmployes;
+      console.log(data)
+      this.tableService.ajouter(this.newTable).subscribe(
+        data=>{
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Auteur ajouté avec succès',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          
+        }
+      );
+    }
+  )
+}
 }

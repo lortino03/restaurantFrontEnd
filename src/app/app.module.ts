@@ -12,7 +12,9 @@ import { PlatsComponent } from './plats/plats.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { ManagementComponent } from './management/management.component';
-import{FormsModule} from '@angular/forms'
+import{FormsModule} from '@angular/forms';
+import { ListeClientsComponent } from './liste-clients/liste-clients.component';
+import { ListeEmployesComponent } from './liste-employes/liste-employes.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import{FormsModule} from '@angular/forms'
     PlatsComponent,
     HomeComponent,
     HeaderComponent,
-    ManagementComponent
+    ManagementComponent,
+    ListeClientsComponent,
+    ListeEmployesComponent
   ],
   imports: [
     BrowserModule,
