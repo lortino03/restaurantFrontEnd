@@ -41,11 +41,11 @@ AjouterTables(){
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Auteur ajouté avec succès',
+            title: 'Table ajoutée avec succès',
             showConfirmButton: false,
             timer: 1500
           })
-          
+          this.ngOnInit();
         }
       );
     }

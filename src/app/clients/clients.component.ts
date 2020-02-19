@@ -24,7 +24,7 @@ export class ClientsComponent implements OnInit {
         Swal.fire({
           position: 'top-end',
           icon: 'success',
-          title: 'Auteur ajouté avec succès',
+          title: 'Client ajouté avec succès',
           showConfirmButton: false,
           timer: 1500
         })
