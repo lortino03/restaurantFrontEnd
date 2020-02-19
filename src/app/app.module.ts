@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import{ HttpClientModule }from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommandeComponent } from './commande/commande.component';
@@ -12,6 +12,8 @@ import { PlatsComponent } from './plats/plats.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { ManagementComponent } from './management/management.component';
+import { NgModule } from '@angular/core';
+import{FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ManagementComponent } from './management/management.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
