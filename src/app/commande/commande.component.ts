@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Commande } from '../models/commande';
 
 @Component({
   selector: 'app-commande',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./commande.component.css']
 })
 export class CommandeComponent implements OnInit {
-
+  newCommande:Commande=new Commande();
   constructor() { }
 
   ngOnInit() {

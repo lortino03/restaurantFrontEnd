@@ -1,13 +1,82 @@
-<div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-dark p-4">
-        <h5 class="text-white h4">Collapsed content</h5>
-        <span class="text-muted">Toggleable via the navbar brand.</span>
-      </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+<header>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="color: yellowgreen;">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:4200/home" style="color:cornsilk">Accueil</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="color:cornsilk">
+              Consulter
+            </a>
+            <!-- bloc menu déroulant -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="http://localhost:4200/liste-livres-utilisateurs">Livres</a>
+              <a class="dropdown-item" href="http://localhost:4200/liste-auteurs-utilisateurs">Auteurs</a>
+              <a class="dropdown-item" href="http://localhost:4200/liste-etagere-utilisateur">Etageres</a>
+              <a class="dropdown-item" href="http://localhost:4200/liste-categorie-utilisateurs">Categorie</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="color:cornsilk">
+              Administrateur
+            </a>
+            <!-- bloc menu déroulant -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="http://localhost:4200/liste-livres">Livres</a>
+              <a class="dropdown-item" href="http://localhost:4200/liste-auteurs">Auteurs</a>
+              <a class="dropdown-item" href="http://localhost:4200/liste-etagere">Etageres</a>
+              <a class="dropdown-item" href="http://localhost:4200/liste-categorie">Categorie</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="color:cornsilk">
+              Recherche
+            </a>
+            <!-- bloc menu déroulant -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="http://localhost:4200/livre-par-auteur">Par Auteurs</a>
+              <a class="dropdown-item" href="http://localhost:4200/livre-par-etagere">Par Etagere</a>
+              <a class="dropdown-item" href="http://localhost:4200/livre-par-categorie">Par Categorie</a>
+              <a class="dropdown-item" href="http://localhost:4200/test-tuto">Tuto</a>
+  
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:4200/contact" style="color:cornsilk">Contact</a><br>
+     
+          </li>
+        </ul>
+       
+        <br>
+        <form class="form-inline my-2 my-lg-5">
+          <button class="btn btn-outline-success my-2 my-sm-0" >
+            <a class="dropdown-item" href="http://localhost:4200/connexion">Sign in</a></button>
+            <div class="nav-link"  style="color: cornsilk;">{{newUtilisateurs?.idLogin}}</div>
+        </form>
+        <div class="d-flex justify-content-center mt-3 login_container" *ngIf="condition">
+          <button type="button" name="button" class="btn btn-info" style="color: cornsilk;" (click)="logout()">Logout</button>
+          </div>
+      </div>
     </nav>
-  </div>
+  </header>
+  <br>
+  <!--<li class="nav-item dropdown" *ngIf="condition">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      
+      <fa-icon [icon]="faUser"></fa-icon>{{newUtilisateur.login}}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <a class="dropdown-item" href="form-livre">Emprunts</a>
+      <a class="dropdown-item" href="connexion" (click) = "logout()">Déconnexion</a>
+    </div>
+  </li>-->

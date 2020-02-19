@@ -11,6 +11,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { PlatsComponent } from './plats/plats.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { ManagementComponent } from './management/management.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeaderComponent } from './header/header.component';
     ReservationComponent,
     PlatsComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    ManagementComponent
   ],
   imports: [
     BrowserModule,
