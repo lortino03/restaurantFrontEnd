@@ -6,4 +6,5 @@ export class Reservation{
     dateDeResa:Date;
     clients:Clients;
     tables: Tables;
+    NbrePersonne: number;
 }
