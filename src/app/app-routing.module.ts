@@ -7,6 +7,7 @@ import { EmployesComponent } from './employes/employes.component';
 import { TablesComponent } from './tables/tables.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ListeClientsComponent } from './liste-clients/liste-clients.component';
+import { ListeEmployesComponent } from './liste-employes/liste-employes.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: "liste-clients",
     component:ListeClientsComponent
+  }
+  ,{
+    path:"liste-employes",
+    component:ListeEmployesComponent
   }
 ];
 

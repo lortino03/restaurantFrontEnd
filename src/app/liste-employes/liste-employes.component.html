@@ -1,1 +1,48 @@
-<p>liste-employes works!</p>
+<html style="background-color: coral;">
+
+<head>
+
+</head>
+
+<body style="background-color: rgb(46, 214, 172);">
+    <h1 align="center">LISTE DES EMPLOYES</h1>
+    <div class="container" id="MonTableau">
+        <h2>Filtre</h2>
+        <p>Type something in the input field to search the table for first names, last names or emails:</p>
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <br>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr align="center">
+                    <th scope="col">Noms </th>
+                    <th scope="col">Prenoms</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr *ngFor="let Employes of listEmployes">
+                    <td>{{Employes.nom}}</td>
+                    <td>{{Employes.prenom}}</td>
+                    <td>{{Employes.status}}</td>
+                    <td align="center"><button type="button" class="btn btn-outline-danger"
+                            (click)="SupprimerClient(Clients.idClients)">Supprimer</button>
+                        <a type="button" href="{{'http://localhost:4200/detail-auteurs/'+Clients.idClients}}"
+                            class="btn btn-outline-success">Consulter</a>
+                        <a type="button" href="{{'http://localhost:4200/modif-auteurs/'+Clients.idClients}}"
+                            class="btn btn-outline-primary">Modifier</a>
+                        <a type="button" href="{{'http://localhost:4200/livres-auteur/'+Clients.idClients}}"
+                            class="btn btn-outline-primary">Afficher</a>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <button type="button" class="btn btn-outline-info">
+                <a class="nav-link" href="http://localhost:4200/employes">Ajouter un employes
+                </a></button>
+        </table>
+    </div>
+
+</body>
+
+</html>
