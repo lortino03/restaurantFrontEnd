@@ -4,6 +4,7 @@ import { ClientsService } from '../services/clients.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2'
 
+
 @Component({
   selector: 'app-modifier-clients',
   templateUrl: './modifier-clients.component.html',
@@ -20,8 +21,8 @@ export class ModifierClientsComponent implements OnInit {
   ngOnInit() {
     this.clientService.RecupUn(this.idclient).subscribe(
       data => {
-        this.modifierClient = data;
         console.log(data)
+        this.modifierClient = data;
       }
     )
   }

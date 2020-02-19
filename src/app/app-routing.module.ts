@@ -46,11 +46,11 @@ const routes: Routes = [
     component:ListeEmployesComponent
   },
   {
-    path:"modifier-clients/:id",
+    path:"modifier-clients/:idClients",
     component:ModifierClientsComponent
   },
   {
-    path:"modifier-employes/",
+    path:"modifier-employes/:idEmploye",
     component:ModifierEmployesComponent
   }
 ];
