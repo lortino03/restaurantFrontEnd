@@ -24,7 +24,7 @@
                     <td>{{Commande.dateDeCommande}}</td>
                     <td>{{Commande.tables.nbrePlace}}</td>
                     <td align="center"><button type="button" class="btn btn-outline-danger"
-                            (click)="upprimerCommande(Commande.idCommande)">Supprimer</button>
+                            (click)="SupprimerCommande(Commande.idCommande)">Supprimer</button>
                         <a type="button" href="{{'http://localhost:4200/detail-auteurs/'+Commande.idCommande}}"
                             class="btn btn-outline-success">Consulter</a>
                         <a type="button" href="{{'http://localhost:4200/modifier-commande/'+Commande.idCommande}}"
