@@ -12,7 +12,7 @@ declare var $:any;
 })
 export class ListeEmployesComponent implements OnInit {
 listEmployes: Employes[]=[];
-  constructor(private employesService:EmployesService, private route: Router) { }
+  constructor(private employesService:EmployesService) { }
 
   ngOnInit() {
     this.employesService.ToutAfficher().subscribe(
@@ -37,7 +37,7 @@ listEmployes: Employes[]=[];
     Swal.fire({
       icon: 'error',
       title: 'Desolé...',
-      text: 'Ce client ne peux etre supprimé!',
+      text: 'Cet employé ne peux etre supprimé!',
       footer: '<a href>Why do I have this issue?</a>'
     })
     Swal.fire({
@@ -54,7 +54,7 @@ listEmployes: Employes[]=[];
           data => {
             Swal.fire(
               'Supprimé!',
-              'Le fichier a été supprimé.',
+              'employé a été viré ahahaha.',
               'success'
             )
             this.ngOnInit();

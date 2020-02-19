@@ -26,19 +26,19 @@
                     <td>{{Employes.prenom}}</td>
                     <td>{{Employes.status}}</td>
                     <td align="center"><button type="button" class="btn btn-outline-danger"
-                            (click)="SupprimerClient(Clients.idClients)">Supprimer</button>
-                        <a type="button" href="{{'http://localhost:4200/detail-auteurs/'+Clients.idClients}}"
+                            (click)="SupprimerEmployes(Employes.idEmploye)">Supprimer</button>
+                        <a type="button" href="{{'http://localhost:4200/detail-employes/'+Employes.idEmploye}}"
                             class="btn btn-outline-success">Consulter</a>
-                        <a type="button" href="{{'http://localhost:4200/modif-auteurs/'+Clients.idClients}}"
+                        <a type="button" href="{{'http://localhost:4200/modif-auteurs/'+Employes.idEmploye}}"
                             class="btn btn-outline-primary">Modifier</a>
-                        <a type="button" href="{{'http://localhost:4200/livres-auteur/'+Clients.idClients}}"
+                        <a type="button" href="{{'http://localhost:4200/livres-auteur/'+Employes.idEmploye}}"
                             class="btn btn-outline-primary">Afficher</a>
                     </td>
                     <td></td>
                 </tr>
             </tbody>
             <button type="button" class="btn btn-outline-info">
-                <a class="nav-link" href="http://localhost:4200/employes">Ajouter un employes
+                <a class="nav-link" href="http://localhost:4200/employes">Ajouter un employé
                 </a></button>
         </table>
     </div>

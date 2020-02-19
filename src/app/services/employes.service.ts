@@ -22,7 +22,7 @@ export class EmployesService {
     return this.http.put("http://localhost:8080/employes/"+id,employes).pipe();
   }
   supprimer(id: number) {
-    return this.http.delete("http://localhost:8080/reservation/"+id).pipe()
+    return this.http.delete("http://localhost:8080/employes/"+id).pipe()
   }
 
 }
