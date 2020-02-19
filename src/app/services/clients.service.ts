@@ -20,7 +20,7 @@ export class ClientsService {
     return this.http.post("http://localhost:8080/clients",clients).pipe();
   }
   MettreAjour(id: number, clients: Clients) {
-    return this.http.put("http://localhost:8080/clients/" +id,clients).pipe();
+    return this.http.put("http://localhost:8080/clients/"+id,clients).pipe();
   }
   supprimer(id: number) {
     return this.http.delete("http://localhost:8080/clients/"+id).pipe()

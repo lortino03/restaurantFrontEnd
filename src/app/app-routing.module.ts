@@ -8,6 +8,8 @@ import { TablesComponent } from './tables/tables.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ListeClientsComponent } from './liste-clients/liste-clients.component';
 import { ListeEmployesComponent } from './liste-employes/liste-employes.component';
+import { ModifierClientsComponent } from './modifier-clients/modifier-clients.component';
+import { ModifierEmployesComponent } from './modifier-employes/modifier-employes.component';
 
 
 const routes: Routes = [
@@ -42,6 +44,14 @@ const routes: Routes = [
   ,{
     path:"liste-employes",
     component:ListeEmployesComponent
+  },
+  {
+    path:"modifier-clients/:id",
+    component:ModifierClientsComponent
+  },
+  {
+    path:"modifier-employes/",
+    component:ModifierEmployesComponent
   }
 ];
 

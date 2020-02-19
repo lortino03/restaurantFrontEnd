@@ -4,21 +4,21 @@
         <div class="form-group row">
             <label for="nom" class="col-sm-2 col-form-label">Nom</label>
             <div class="col-sm-10">
-                <input type="text" name="nom" [(ngModel)]="newClients.nom" class="form-control" id="idnom">
+                <input type="text" name="nom" [(ngModel)]="modifierClient.nom" class="form-control" id="idnom">
             </div>
         </div>
         <div class="form-group row">
             <label for="prenom" class="col-sm-2 col-form-label">Prenom</label>
             <div class="col-sm-10">
-                <input type="text" name="prenom"[(ngModel)]="newClients.prenom" class="form-control" id="idprenom">
+                <input type="text" name="prenom"[(ngModel)]="modifierClient.prenom" class="form-control" id="idprenom">
             </div>
             <div class="form-group row">
                 <label for="status" class="col-sm-2 col-form-label">telephone</label>
                 <div class="col-sm-10">
-                    <input type="text" name="status" [(ngModel)]="newClients.telephone"class="form-control" id="idtelephone">
+                    <input type="text" name="status" [(ngModel)]="modifierClient.telephone"class="form-control" id="idtelephone">
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" (click)="AjouterClient()">Ajouter!</button>
+            <button type="submit" class="btn btn-primary" (click)="ModifierClients()">Mettre à jour!</button>
         </div>
     </form>
 </div>

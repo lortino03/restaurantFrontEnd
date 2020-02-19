@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Clients } from '../models/clients';
-import { CommandeService } from '../services/commande.service';
-import { Router } from '@angular/router';
 import { ClientsService } from '../services/clients.service';
 import Swal from 'sweetalert2'
 declare var $:any;

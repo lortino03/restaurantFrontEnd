@@ -14,7 +14,9 @@ import { HeaderComponent } from './header/header.component';
 import { ManagementComponent } from './management/management.component';
 import{FormsModule} from '@angular/forms';
 import { ListeClientsComponent } from './liste-clients/liste-clients.component';
-import { ListeEmployesComponent } from './liste-employes/liste-employes.component'
+import { ListeEmployesComponent } from './liste-employes/liste-employes.component';
+import { ModifierEmployesComponent } from './modifier-employes/modifier-employes.component';
+import { ModifierClientsComponent } from './modifier-clients/modifier-clients.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ListeEmployesComponent } from './liste-employes/liste-employes.componen
     HeaderComponent,
     ManagementComponent,
     ListeClientsComponent,
-    ListeEmployesComponent
+    ListeEmployesComponent,
+    ModifierEmployesComponent,
+    ModifierClientsComponent
   ],
   imports: [
     BrowserModule,
