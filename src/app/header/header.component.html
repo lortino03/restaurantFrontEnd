@@ -1,6 +1,6 @@
 <header>
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="color: yellowgreen;">
+    <nav class="navbar navbar-expand-lg navbar-light" >
       <a class="navbar-brand" href="#"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,24 +9,24 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="http://localhost:4200/home" style="color:cornsilk">Accueil</a>
+            <a class="nav-link" href="http://localhost:4200/home" >Accueil</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" style="color:cornsilk">
+              aria-haspopup="true" aria-expanded="false">
               Consulter
             </a>
             <!-- bloc menu déroulant -->
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="http://localhost:4200/liste-livres-utilisateurs">Livres</a>
-              <a class="dropdown-item" href="http://localhost:4200/liste-auteurs-utilisateurs">Auteurs</a>
+              <a class="dropdown-item" href="http://localhost:4200/employes">Employes</a>
+              <a class="dropdown-item" href="http://localhost:4200/clients">clients</a>
               <a class="dropdown-item" href="http://localhost:4200/liste-etagere-utilisateur">Etageres</a>
               <a class="dropdown-item" href="http://localhost:4200/liste-categorie-utilisateurs">Categorie</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" style="color:cornsilk">
+              aria-haspopup="true" aria-expanded="false">
               Administrateur
             </a>
             <!-- bloc menu déroulant -->
@@ -39,7 +39,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" style="color:cornsilk">
+              aria-haspopup="true" aria-expanded="false" >
               Recherche
             </a>
             <!-- bloc menu déroulant -->
@@ -52,7 +52,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4200/contact" style="color:cornsilk">Contact</a><br>
+            <a class="nav-link" href="http://localhost:4200/contact" >Contact</a><br>
      
           </li>
         </ul>
@@ -61,22 +61,12 @@
         <form class="form-inline my-2 my-lg-5">
           <button class="btn btn-outline-success my-2 my-sm-0" >
             <a class="dropdown-item" href="http://localhost:4200/connexion">Sign in</a></button>
-            <div class="nav-link"  style="color: cornsilk;">{{newUtilisateurs?.idLogin}}</div>
+            <div class="nav-link" >{{newUtilisateurs?.idLogin}}</div>
         </form>
         <div class="d-flex justify-content-center mt-3 login_container" *ngIf="condition">
-          <button type="button" name="button" class="btn btn-info" style="color: cornsilk;" (click)="logout()">Logout</button>
+          <button type="button" name="button" class="btn btn-info"  (click)="logout()">Logout</button>
           </div>
       </div>
     </nav>
   </header>
   <br>
-  <!--<li class="nav-item dropdown" *ngIf="condition">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      
-      <fa-icon [icon]="faUser"></fa-icon>{{newUtilisateur.login}}
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-      <a class="dropdown-item" href="form-livre">Emprunts</a>
-      <a class="dropdown-item" href="connexion" (click) = "logout()">Déconnexion</a>
-    </div>
-  </li>-->

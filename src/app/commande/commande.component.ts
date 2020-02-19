@@ -3,7 +3,7 @@ import { Commande } from '../models/commande';
 
 @Component({
   selector: 'app-commande',
-  templateUrl: './commande.component.html',
+  templateUrl: './commande.component.html',  
   styleUrls: ['./commande.component.css']
 })
 export class CommandeComponent implements OnInit {
