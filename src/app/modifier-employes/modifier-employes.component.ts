@@ -37,7 +37,7 @@ export class ModifierEmployesComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         });
-        this.ngOnInit();
+      
       }
     )
   }

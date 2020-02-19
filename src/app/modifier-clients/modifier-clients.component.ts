@@ -27,6 +27,7 @@ export class ModifierClientsComponent implements OnInit {
     )
   }
   ModifierClients() {
+    console.log(this.modifierClient)
     this.clientService.MettreAjour(this.idclient, this.modifierClient).subscribe(
       data => {
         Swal.fire({
