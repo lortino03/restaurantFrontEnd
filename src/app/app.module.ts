@@ -16,7 +16,8 @@ import{FormsModule} from '@angular/forms';
 import { ListeClientsComponent } from './liste-clients/liste-clients.component';
 import { ListeEmployesComponent } from './liste-employes/liste-employes.component';
 import { ModifierEmployesComponent } from './modifier-employes/modifier-employes.component';
-import { ModifierClientsComponent } from './modifier-clients/modifier-clients.component'
+import { ModifierClientsComponent } from './modifier-clients/modifier-clients.component';
+import { ListeCommandesComponent } from './liste-commandes/liste-commandes.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ModifierClientsComponent } from './modifier-clients/modifier-clients.co
     ListeClientsComponent,
     ListeEmployesComponent,
     ModifierEmployesComponent,
-    ModifierClientsComponent
+    ModifierClientsComponent,
+    ListeCommandesComponent
   ],
   imports: [
     BrowserModule,

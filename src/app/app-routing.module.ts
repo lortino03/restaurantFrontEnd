@@ -10,6 +10,7 @@ import { ListeClientsComponent } from './liste-clients/liste-clients.component';
 import { ListeEmployesComponent } from './liste-employes/liste-employes.component';
 import { ModifierClientsComponent } from './modifier-clients/modifier-clients.component';
 import { ModifierEmployesComponent } from './modifier-employes/modifier-employes.component';
+import { ListeCommandesComponent } from './liste-commandes/liste-commandes.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,10 @@ const routes: Routes = [
   ,{
     path:"liste-employes",
     component:ListeEmployesComponent
+  },
+  {
+    path:"liste-commandes",
+    component:ListeCommandesComponent
   },
   {
     path:"modifier-clients/:idClients",

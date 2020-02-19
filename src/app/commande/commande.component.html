@@ -16,6 +16,7 @@
                 <label for="status" class="col-sm-2 col-form-label">table</label>
                 <select class="form-control" name="Tables" [(ngModel)]="idTable" id="idtable">
                     <option *ngFor="let tables of listTables" [(ngValue)]="tables.idTable">{{tables.idTable}}</option>
+                    <!--tables et idTable ici sont ceux  que j'ai instancié dans le component.ts-->
                 </select>
             </div>
             <button type="submit" class="btn btn-primary" (click)="AjouterCommande()">Ajouter!</button>

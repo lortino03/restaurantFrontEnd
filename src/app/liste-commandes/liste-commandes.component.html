@@ -1,0 +1,46 @@
+<html style="background-color: coral;">
+
+<head>
+
+</head>
+
+<body style="background-color:wheat">
+    <h1 align="center">RELEVES DES COMMANDES</h1>
+    <div class="container" id="MonTableau">
+        <h2>Filtre</h2>
+        <p>Type something in the input field to search the table for first names, last names or emails:</p>
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <br>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr align="center">
+                    <th scope="col">DATE DE COMMANDE </th>
+                    <th scope="col">TABLE</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr *ngFor="let Commande of listCommande"> <!-- normalement je met let (variable declaré) mais en absence je mets la classe-->
+                    <td>{{Commande.dateDeCommande}}</td>
+                    <td>{{Commande.tables.nbrePlace}}</td>
+                    <td align="center"><button type="button" class="btn btn-outline-danger"
+                            (click)="upprimerCommande(Commande.idCommande)">Supprimer</button>
+                        <a type="button" href="{{'http://localhost:4200/detail-auteurs/'+Commande.idCommande}}"
+                            class="btn btn-outline-success">Consulter</a>
+                        <a type="button" href="{{'http://localhost:4200/modifier-commande/'+Commande.idCommande}}"
+                            class="btn btn-outline-primary">Modifier</a>
+                        <a type="button" href="{{'http://localhost:4200/livres-auteur/'+Commande.idCommande}}"
+                            class="btn btn-outline-primary">Afficher</a>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <button type="button" class="btn btn-outline-info">
+                <a class="nav-link" href="http://localhost:4200/commande">Ajouter une commande
+                </a></button>
+        </table>
+    </div>
+
+</body>
+
+</html>

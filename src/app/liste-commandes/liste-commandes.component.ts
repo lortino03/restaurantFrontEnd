@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { Clients } from '../models/clients';
-import { ClientsService } from '../services/clients.service';
+import { CommandeService } from '../services/commande.service';
+import { Commande } from '../models/commande';
 import Swal from 'sweetalert2'
 declare var $: any;
 
-@Component({
-  selector: 'app-liste-clients',
-  templateUrl: './liste-clients.component.html',
-  styleUrls: ['./liste-clients.component.css']
-})
-export class ListeClientsComponent implements OnInit {
-  listClients: Clients[] = [];
 
-  constructor(private clientsService: ClientsService) { }
+@Component({
+  selector: 'app-liste-commandes',
+  templateUrl: './liste-commandes.component.html',
+  styleUrls: ['./liste-commandes.component.css']
+})
+export class ListeCommandesComponent implements OnInit {
+  listCommande: Commande[] = [];
+
+  constructor(private commandeService: CommandeService) { }
 
   ngOnInit() {
-    this.clientsService.ToutAfficher().subscribe(
+    this.commandeService.ToutAfficher().subscribe(
       data => {
-        console.log(this.listClients);
-        this.listClients = data;
+        this.listCommande = data;
+        console.log(data);
       }
     );
     $(document).ready(function () {
@@ -30,7 +31,8 @@ export class ListeClientsComponent implements OnInit {
       });
     });
   }
-  SupprimerClient(id: number) {
+
+  SupprimerCommande(id: number) {
     Swal.fire({
       icon: 'error',
       title: 'Desolé...',
@@ -47,11 +49,11 @@ export class ListeClientsComponent implements OnInit {
       confirmButtonText: 'Oui, continuer!'
     }).then((result) => {
       if (result.value) {
-        this.clientsService.supprimer(id).subscribe(
+        this.commandeService.supprimer(id).subscribe(
           data => {
             Swal.fire(
               'Supprimé!',
-              'Le fichier a été supprimé.',
+              'La commande a été supprimée.',
               'success'
             )
             this.ngOnInit();
@@ -60,5 +62,6 @@ export class ListeClientsComponent implements OnInit {
 
       }
     })
+
   }
 }
