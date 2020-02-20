@@ -6,6 +6,6 @@ export class Reservation{
     telephone:string;
     NbrePersonne: number;
     dateDeResa:Date;
-    horaire:any;
+    heure:any;
  
 }
