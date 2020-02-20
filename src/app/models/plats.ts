@@ -5,5 +5,5 @@ export class Plats{
     libelle:String;
     quantite:number;
     prix:number;
-    commande:Commande;
+    
 }

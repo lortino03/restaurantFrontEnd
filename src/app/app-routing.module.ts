@@ -11,6 +11,9 @@ import { ListeEmployesComponent } from './liste-employes/liste-employes.componen
 import { ModifierClientsComponent } from './modifier-clients/modifier-clients.component';
 import { ModifierEmployesComponent } from './modifier-employes/modifier-employes.component';
 import { ListeCommandesComponent } from './liste-commandes/liste-commandes.component';
+import { ModifierCommandeComponent } from './modifier-commande/modifier-commande.component';
+import { ModifierTablesComponent } from './modifier-tables/modifier-tables.component';
+import { ListePlatsComponent } from './liste-plats/liste-plats.component';
 
 
 const routes: Routes = [
@@ -57,6 +60,18 @@ const routes: Routes = [
   {
     path:"modifier-employes/:idEmploye",
     component:ModifierEmployesComponent
+  },
+  {
+    path:"modifier-commande/:idCommande",
+    component:ModifierCommandeComponent
+  },
+  {
+    path:"modifier-tables/:idTables",
+    component: ModifierTablesComponent
+  },
+  {
+    path:"liste-plats",
+    component:ListePlatsComponent
   }
 ];
 

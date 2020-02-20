@@ -12,44 +12,32 @@ import Swal from 'sweetalert2'
   styleUrls: ['./plats.component.css']
 })
 export class PlatsComponent implements OnInit {
-  newPlat: Plats=new Plats();
-  newCommande:Commande=new Commande();
-  listCommande: Commande []=[];
-  idcommande:number;
+  newPlat: Plats = new Plats();
 
-  constructor(private platsService: PlatsService, private commandeService:CommandeService,
-    private route: ActivatedRoute) { 
-      this.idcommande=parseInt(this.route.snapshot.paramMap.get('idCommande'))
-    }
+  constructor(private platsService: PlatsService,
+    private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.commandeService.ToutAfficher().subscribe(
-      data =>{
-        this.listCommande=data;
-        console.log(data)
-      }
-    )
+
   }
-  AjouterPlats(){
-    this.commandeService.RecupUn(this.idcommande).subscribe(
-      data=>{
-        this.newCommande=data;
-        this.newPlat.commande=this.newCommande;
-        console.log(data)
-        this.platsService.ajouter(this.newPlat).subscribe(
-          data=>{
-            Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'nouveau plats ajouté avec succès',
-              showConfirmButton: false,
-              timer: 1500,
-            })
-            this.ngOnInit();
-          }
-        )
+
+  AjouterPlats() {
+
+    this.platsService.ajouter(this.newPlat).subscribe(
+      data => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'nouveau plats ajouté avec succès',
+          showConfirmButton: false,
+          timer: 1500,
+        })
+        console.log(this.newPlat)
+        this.ngOnInit();
       }
     )
+
+
   }
 
 }

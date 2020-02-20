@@ -17,7 +17,11 @@ import { ListeClientsComponent } from './liste-clients/liste-clients.component';
 import { ListeEmployesComponent } from './liste-employes/liste-employes.component';
 import { ModifierEmployesComponent } from './modifier-employes/modifier-employes.component';
 import { ModifierClientsComponent } from './modifier-clients/modifier-clients.component';
-import { ListeCommandesComponent } from './liste-commandes/liste-commandes.component'
+import { ListeCommandesComponent } from './liste-commandes/liste-commandes.component';
+import { ModifierCommandeComponent } from './modifier-commande/modifier-commande.component';
+import { ModifierTablesComponent } from './modifier-tables/modifier-tables.component';
+import { ListePlatsComponent } from './liste-plats/liste-plats.component';
+import { ModifierPlatsComponent } from './modifier-plats/modifier-plats.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { ListeCommandesComponent } from './liste-commandes/liste-commandes.compo
     ListeEmployesComponent,
     ModifierEmployesComponent,
     ModifierClientsComponent,
-    ListeCommandesComponent
+    ListeCommandesComponent,
+    ModifierCommandeComponent,
+    ModifierTablesComponent,
+    ListePlatsComponent,
+    ModifierPlatsComponent
   ],
   imports: [
     BrowserModule,
