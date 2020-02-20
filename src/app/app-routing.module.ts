@@ -15,12 +15,18 @@ import { ModifierCommandeComponent } from './modifier-commande/modifier-commande
 import { ModifierTablesComponent } from './modifier-tables/modifier-tables.component';
 import { ListePlatsComponent } from './liste-plats/liste-plats.component';
 import { ModifierPlatsComponent } from './modifier-plats/modifier-plats.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
   {
     path:"clients",
     component:ClientsComponent
+  },
+  {
+    path:"home",
+    component:HomeComponent
+
   },
   {
     path:"commande",

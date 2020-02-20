@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Reservation } from '../models/reservation';
+import { ReservationService } from '../services/reservation.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-reservation',
@@ -6,10 +10,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent implements OnInit {
+  newResa: Reservation= new Reservation();
+  condition=false;
 
-  constructor() { }
+  constructor(private reservationService: ReservationService, private route: Router) { }
 
   ngOnInit() {
+
   }
 
+  ReserverTable(id:number){
+    this.condition=true;
+    this.reservationService.ajouter(this.newResa).subscribe(
+      data=>{
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'nouveau plats ajouté avec succès',
+          showConfirmButton: false,
+          timer: 1500,
+        })
+        console.log(this.newResa)
+        this.ngOnInit();
+      }
+    )
+  }
 }

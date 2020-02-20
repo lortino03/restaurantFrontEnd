@@ -14,7 +14,7 @@ export class ListePlatsComponent implements OnInit {
   ListePlats: Plats[]=[];
 
 
-  constructor(private platsService: PlatsService, private route: Router) { }
+  constructor(private platsService: PlatsService) { }
 
   ngOnInit() {
     this.platsService.ToutAfficher().subscribe(
