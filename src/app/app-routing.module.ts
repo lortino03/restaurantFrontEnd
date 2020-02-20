@@ -16,6 +16,7 @@ import { ModifierTablesComponent } from './modifier-tables/modifier-tables.compo
 import { ListePlatsComponent } from './liste-plats/liste-plats.component';
 import { ModifierPlatsComponent } from './modifier-plats/modifier-plats.component';
 import { HomeComponent } from './home/home.component';
+import { ListeTablesComponent } from './liste-tables/liste-tables.component';
 
 
 const routes: Routes = [
@@ -83,6 +84,10 @@ const routes: Routes = [
   {
     path:"liste-plats",
     component:ListePlatsComponent
+  },
+  {
+    path:"liste-tables",
+    component:ListeTablesComponent
   }
 ];
 

@@ -1,0 +1,45 @@
+<html style="background-color: coral;">
+
+<head>
+
+</head>
+
+<body style="background-color: rgb(46, 214, 172);">
+    <h1 align="center">LISTE DES TABLES</h1>
+    <div class="container" id="MonTableau">
+        <h2>Filtre</h2>
+        <p>Type something in the input field to search the table for first names, last names or emails:</p>
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <br>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr align="center">
+                    <th scope="col">Numero de table </th>
+                    <th scope="col">nombre de place</th>
+                    <th scope="col">serveur associé</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr *ngFor="let Tables of listeTables">
+                    <td>{{Tables.numero}}</td>
+                    <td>{{Tables.nbrePlace}}</td>
+                    <td>{{Tables.employes.nom}}</td>
+                    <td align="center"><button type="button" class="btn btn-outline-danger"(click)="SupprimerTables(Tables.idTable)">Supprimer</button>
+                        <a type="button" href="{{'http://localhost:4200/detail-plats/'+Tables.idPlats}}"
+                            class="btn btn-outline-success">Consulter</a>
+                        <a type="button" href="{{'http://localhost:4200/modifier-plats/'+Tables.idPlats}}"
+                            class="btn btn-outline-primary">Modifier</a>                   
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <button type="button" class="btn btn-outline-info">
+                <a class="nav-link" href="http://localhost:4200/plats">Ajouter un nouveau plats
+                </a></button>
+        </table>
+    </div>
+
+</body>
+
+</html>
