@@ -12,7 +12,7 @@ declare var $:any;
 })
 export class ListePlatsComponent implements OnInit {
   ListePlats: Plats[]=[];
-  plats: Plats;
+
 
   constructor(private platsService: PlatsService, private route: Router) { }
 
@@ -52,7 +52,7 @@ export class ListePlatsComponent implements OnInit {
           data => {
             Swal.fire(
               'Supprimé!',
-              'employé a été viré ahahaha.',
+              'le plats a été retiré du menu.',
               'success'
             )
             this.ngOnInit();
