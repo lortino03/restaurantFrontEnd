@@ -4,6 +4,13 @@
     <form>
         <tr>
             <div class="form-group row">
+                <label for="nom" class="col-sm-5 col-form-label">Numero de table </label>
+                <div class="col-sm-10">
+                    <input type="text" name="numero" [(ngModel)]="newTable.numero" class="form-control"
+                        id="iddate" style="background-color:rgb(205, 209, 233);">
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="nom" class="col-sm-5 col-form-label">Nombre de place</label>
                 <div class="col-sm-10">
                     <input type="number" name="nbrePlace" [(ngModel)]="newTable.nbrePlace" class="form-control"
