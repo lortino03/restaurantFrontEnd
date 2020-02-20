@@ -14,6 +14,7 @@ import { ListeCommandesComponent } from './liste-commandes/liste-commandes.compo
 import { ModifierCommandeComponent } from './modifier-commande/modifier-commande.component';
 import { ModifierTablesComponent } from './modifier-tables/modifier-tables.component';
 import { ListePlatsComponent } from './liste-plats/liste-plats.component';
+import { ModifierPlatsComponent } from './modifier-plats/modifier-plats.component';
 
 
 const routes: Routes = [
@@ -54,19 +55,23 @@ const routes: Routes = [
     component:ListeCommandesComponent
   },
   {
-    path:"modifier-clients/:idClients",
+    path:"modifier-clients/:idClients", // toujours ecrire l'id comme dans postman
     component:ModifierClientsComponent
   },
   {
-    path:"modifier-employes/:idEmploye",
+    path:"modifier-employes/:idEmploye", // toujours ecrire l'id comme dans postman
     component:ModifierEmployesComponent
   },
   {
-    path:"modifier-commande/:idCommande",
+    path:"modifier-commande/:idCommande", // toujours ecrire l'id comme dans postman
     component:ModifierCommandeComponent
   },
   {
-    path:"modifier-tables/:idTables",
+    path:"modifier-plats/:idPlats", // toujours ecrire l'id comme dans postman
+    component:ModifierPlatsComponent
+  },
+  {
+    path:"modifier-tables/:idTables", // toujours ecrire l'id comme dans postman
     component: ModifierTablesComponent
   },
   {

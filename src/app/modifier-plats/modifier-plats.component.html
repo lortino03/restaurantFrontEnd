@@ -1,1 +1,30 @@
-<p>modifier-plats works!</p>
+<h2 align="center">Ajouter un nouveau plats</h2>
+<div class="container">
+    <form>
+        <div class="form-group row">
+            <label for="nom" class="col-sm-2 col-form-label">Libelle</label>
+            <div class="col-sm-10">
+                <input type="text" name="libelle" [(ngModel)]="modifPlats.libelle" class="form-control" id="idnom">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="nom" class="col-sm-2 col-form-label">Quantité</label>
+            <div class="col-sm-10">
+                <input type="number" name="quantite" [(ngModel)]="modifPlats.quantite" class="form-control" id="idquantite">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="nom" class="col-sm-2 col-form-label">Prix</label>
+            <div class="col-sm-10">
+                <input type="text" name="prix" [(ngModel)]="modifPlats.prix" class="form-control" id="idprix">
+            </div>
+        </div>
+        <div class="form-group row">
+            <button type="submit" class="btn btn-primary" (click)="ModifierPlats()">Mettre a jour!</button>
+        </div>
+    </form>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="col-sm-10">
+    
+</div>
