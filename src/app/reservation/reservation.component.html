@@ -1,12 +1,12 @@
 
 <div class="container">
-    <h2 align="left">Reservation</h2>
+    <h5 align="left">Reservation</h5>
     <form>
         <tr>
             <div class="form-group row">
                 <label for="nom" class="col-sm-3 col-form-label">Nom</label>
                 <div class="col-sm-10">
-                    <input type="text" name="nom" [(ngModel)]="newResa.nom" class="form-control" id="idnom">
+                    <input type="text" name="nom" [(ngModel)]="newResa.nom" class="form-control" id="idnom" style="background-color:rgb(205, 209, 233);">
                 </div>
             </div>
         </tr>
@@ -14,7 +14,7 @@
             <div class="form-group row">
                 <label for="telephone" class="col-sm-3 col-form-label">Telephone</label>
                 <div class="col-sm-10">
-                    <input type="text" name="telephone" [(ngModel)]="newResa.telephone" class="form-control" id="idtel">
+                    <input type="text" name="telephone" [(ngModel)]="newResa.telephone" class="form-control" id="idtel" style="background-color:rgb(205, 209, 233);">
                 </div>
             </div>
         </tr>
@@ -23,7 +23,7 @@
                 <label for="nom" class="col-sm-8 col-form-label">Combien de personne</label>
                 <div class="col-sm-10">
                     <input type="number" name="nbrePersonne" [(ngModel)]="newResa.nbrePersonne" class="form-control"
-                        id="idbrep">
+                        id="idbrep" style="border-color: black;"style="background-color:rgb(205, 209, 233);" >
                 </div>
             </div>
         </tr>
@@ -32,7 +32,7 @@
                 <label for="nom" class="col-sm-5 col-form-label">Date</label>
                 <div class="col-sm-10">
                     <input type="date" name="dateDeResa" [(ngModel)]="newResa.dateDeResa" class="form-control"
-                        id="iddate">
+                        id="iddate" style="background-color:rgb(205, 209, 233);">
                 </div>
             </div>
         </tr>
@@ -41,7 +41,7 @@
                 <label for="nom" class="col-sm-3 col-form-label">Horaire</label>
                 <div  class="col-sm-10">
                     <select id="data_8" name="heure" [(ngModel)]="newResa.heure" style="width : 250px;"
-                        class="form-control">
+                        class="form-control" style="background-color:rgb(205, 209, 233);">
                         <option>12:00</option>
                         <option>12:30</option>
                         <option>13:00</option>
@@ -66,8 +66,7 @@
             </div>
         </tr>
       
-            <button type="submit" class="btn btn-primary" (click)="ReserverTable()">Reserver</button>
-      
+            <button type="submit" class="btn btn-primary" (click)="ReserverTable()">Reserver</button> 
     </form>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

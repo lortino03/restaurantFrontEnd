@@ -16,10 +16,11 @@ export class TablesComponent implements OnInit {
   newTable: Tables= new Tables();
   newEmployes:Employes=new Employes();
   listEmployes: Employes[]=[];
-  idEmploye: number;
+  idemploye: number;
+  employe: Employes;
 
   constructor(private tableService:TablesService, private employesService:EmployesService, private route:ActivatedRoute) { 
-    this.idEmploye=parseInt(this.route.snapshot.paramMap.get('idTables'))
+    this.idemploye=parseInt(this.route.snapshot.paramMap.get('idEmploye'))
   }
 
   ngOnInit() {
@@ -31,7 +32,7 @@ export class TablesComponent implements OnInit {
     )
   }
 AjouterTables(){
-  this.employesService.RecupUn(this.idEmploye).subscribe(
+  this.employesService.RecupUn(this.idemploye).subscribe(
     data=>{
       this.newEmployes=data;
       this.newTable.employes=this.newEmployes;

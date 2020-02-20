@@ -26,7 +26,7 @@ export class ReservationComponent implements OnInit {
         Swal.fire({
           position: 'top-end',
           icon: 'success',
-          title: 'nouveau plats ajouté avec succès',
+          title: 'Votre réservation a été enregistrée ',
           showConfirmButton: false,
           timer: 1500,
         })
