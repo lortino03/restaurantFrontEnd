@@ -3,6 +3,8 @@ import { Clients } from '../models/clients';
 import { ClientsService } from '../services/clients.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2'
+import { Employes } from '../models/employes';
+import { EmployesService } from '../services/employes.service';
 
 
 @Component({
@@ -13,9 +15,11 @@ import Swal from 'sweetalert2'
 export class ModifierClientsComponent implements OnInit {
   idclient: number;
   modifierClient: Clients = new Clients();
+
   
   constructor(private clientService: ClientsService, private route: ActivatedRoute) {
     this.idclient = parseInt(this.route.snapshot.paramMap.get('idClients'))
+
   }
 
   ngOnInit() {
@@ -25,6 +29,7 @@ export class ModifierClientsComponent implements OnInit {
         this.modifierClient = data;
       }
     )
+    
   }
   ModifierClients() {
     console.log(this.modifierClient)

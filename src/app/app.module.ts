@@ -22,7 +22,8 @@ import { ModifierCommandeComponent } from './modifier-commande/modifier-commande
 import { ModifierTablesComponent } from './modifier-tables/modifier-tables.component';
 import { ListePlatsComponent } from './liste-plats/liste-plats.component';
 import { ModifierPlatsComponent } from './modifier-plats/modifier-plats.component';
-import { ListeTablesComponent } from './liste-tables/liste-tables.component'
+import { ListeTablesComponent } from './liste-tables/liste-tables.component';
+import { ConnexionComponent } from './connexion/connexion.component'
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ListeTablesComponent } from './liste-tables/liste-tables.component'
     ModifierTablesComponent,
     ListePlatsComponent,
     ModifierPlatsComponent,
-    ListeTablesComponent
+    ListeTablesComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,

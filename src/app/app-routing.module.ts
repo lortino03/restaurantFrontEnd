@@ -17,6 +17,7 @@ import { ListePlatsComponent } from './liste-plats/liste-plats.component';
 import { ModifierPlatsComponent } from './modifier-plats/modifier-plats.component';
 import { HomeComponent } from './home/home.component';
 import { ListeTablesComponent } from './liste-tables/liste-tables.component';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 
 const routes: Routes = [
@@ -78,9 +79,10 @@ const routes: Routes = [
     component:ModifierPlatsComponent
   },
   {
-    path:"modifier-tables/:idTables", // toujours ecrire l'id comme dans postman
+    path:"modifier-tables/:idTable", // toujours ecrire l'id comme dans postman
     component: ModifierTablesComponent
   },
+  
   {
     path:"liste-plats",
     component:ListePlatsComponent
@@ -88,6 +90,10 @@ const routes: Routes = [
   {
     path:"liste-tables",
     component:ListeTablesComponent
+  },
+  {
+    path:"connexion",
+    component:ConnexionComponent
   }
 ];
 

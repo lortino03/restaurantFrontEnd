@@ -25,4 +25,7 @@ export class EmployesService {
     return this.http.delete("http://localhost:8080/employes/"+id).pipe()
   }
 
+  getByLogin(employes: Employes) {
+    return this.http.post<boolean>("http://localhost:8080/employes/connexbool",employes).pipe();
+  } 
 }
