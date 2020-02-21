@@ -23,7 +23,8 @@ import { ModifierTablesComponent } from './modifier-tables/modifier-tables.compo
 import { ListePlatsComponent } from './liste-plats/liste-plats.component';
 import { ModifierPlatsComponent } from './modifier-plats/modifier-plats.component';
 import { ListeTablesComponent } from './liste-tables/liste-tables.component';
-import { ConnexionComponent } from './connexion/connexion.component'
+import { ConnexionComponent } from './connexion/connexion.component';
+import { CalendrierReservationsComponent } from './calendrier-reservations/calendrier-reservations.component'
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ConnexionComponent } from './connexion/connexion.component'
     ListePlatsComponent,
     ModifierPlatsComponent,
     ListeTablesComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    CalendrierReservationsComponent
   ],
   imports: [
     BrowserModule,

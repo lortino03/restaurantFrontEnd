@@ -1,78 +1,58 @@
 <header>
 
-    <nav class="navbar navbar-expand-lg navbar-light" >
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="http://localhost:4200/home">
+        <img src="assets/images/logo.png" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="http://localhost:4200/home" >Accueil</a>
-          </li>
+      <div class="collapse navbar-collapse" id="navbars-rs-food">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Personnels
-            </a>
-            <!-- bloc menu déroulant -->
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+              <a class="dropdown-item" href="http://localhost:4200/reservation">Reservation</a>
               <a class="dropdown-item" href="http://localhost:4200/employes">Employes</a>
-              <a class="dropdown-item" href="http://localhost:4200/clients">clients</a>
-              <a class="dropdown-item" href="http://localhost:4200/commande">commande</a>
-              <a class="dropdown-item" href="http://localhost:4200/plats">plats</a>
-              <a class="dropdown-item" href="http://localhost:4200/tables">tables</a>
-              <a class="dropdown-item" href="http://localhost:4200/reservation">reservation</a>
-              <a class="dropdown-item" href="http://localhost:4200/connexion">connexion</a>
-           
+              <a class="dropdown-item" href="http://localhost:4200/clients">Clients</a>
+              <a class="dropdown-item" href="http://localhost:4200/commande">Commande</a>
+              <a class="dropdown-item" href="http://localhost:4200/plats">Plats</a>
+              <a class="dropdown-item" href="http://localhost:4200/tables">Tables</a>
+              <a class="dropdown-item" href="http://localhost:4200/connexion">Connexion</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-            Management 
-            </a>
-            <!-- bloc menu déroulant -->
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="http://localhost:4200/liste-clients">liste des clients</a>
-              <a class="dropdown-item" href="http://localhost:4200/liste-employes">liste des employes</a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Management</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+
+              <a class="dropdown-item" href="http://localhost:4200/liste-clients">Liste des clients</a>
+              <a class="dropdown-item" href="http://localhost:4200/liste-employes">Liste des employes</a>
               <a class="dropdown-item" href="http://localhost:4200/reservation">Reserver une table</a>
               <a class="dropdown-item" href="http://localhost:4200/liste-plats">Menus</a>
-              <a class="dropdown-item" href="http://localhost:4200/liste-tables">les Tables</a>
-              <a class="dropdown-item" href="http://localhost:4200/liste-commandes">les commandes</a>
+              <a class="dropdown-item" href="http://localhost:4200/liste-tables">Les Tables</a>
+              <a class="dropdown-item" href="http://localhost:4200/liste-commandes">Les commandes</a>
+
             </div>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" >
-              Mise a jour
-            </a>
-            <!-- bloc menu déroulant -->
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="http://localhost:4200/modifier-clients">MAJ clients</a>
-              <a class="dropdown-item" href="http://localhost:4200/modifier-employes">MAJ employes</a>
-              <a class="dropdown-item" href="http://localhost:4200/modifier-commande">MAJ Commande</a>
-              <a class="dropdown-item" href="http://localhost:4200/test-tuto">Tuto</a>
-  
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4200/contact" >Contact</a><br>
-     
-          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-       
-        <br>
+      </div>
+      <br>
         <form class="form-inline my-2 my-lg-5">
           <button class="btn btn-outline-success my-2 my-sm-0" >
-            <a class="dropdown-item" href="http://localhost:4200/connexion">Sign in</a></button>
-            <div class="nav-link" >{{newUtilisateurs?.idLogin}}</div>
+            <a class="dropdown-item" href="http://localhost:4200/connexion">Se connecter</a></button>
+            <div class="nav-link" >{{newEmploye?.nom}}</div>
         </form>
         <div class="d-flex justify-content-center mt-3 login_container" *ngIf="condition">
-          <button type="button" name="button" class="btn btn-info"  (click)="logout()">Logout</button>
-          </div>
-      </div>
-    </nav>
+          <button type="button" name="button" class="btn btn-info"  (click)="logout()">Se deconnecter</button>
+        </div>
+    </div>
+  </nav> 
   </header>
   <br>
+
+  

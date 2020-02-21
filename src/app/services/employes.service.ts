@@ -28,4 +28,7 @@ export class EmployesService {
   getByLogin(employes: Employes) {
     return this.http.post<boolean>("http://localhost:8080/employes/connexbool",employes).pipe();
   } 
+  getByLoginToken(employes: Employes){
+    return this.http.post<Employes>("http://localhost:8080/employes/token",employes).pipe();
+  }
 }

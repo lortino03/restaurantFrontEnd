@@ -56,4 +56,36 @@ export class ConnexionComponent implements OnInit {
       }
     );
   }
+
+  SeconnectToken() {
+    
+    this.employesService.getByLoginToken(this.newEmployes).subscribe(
+      data => {
+        this.newEmployes.login=data;
+        this.newEmployes.pwd=data;
+        if (data != null) {
+          localStorage.setItem("token",data["token"])
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Connexion reussie!',
+            timer: 1500
+          }).then (function(){
+            window.location.href="/home";
+            console.log("token")
+          })
+        }
+        else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'pwd ou login incorrect!',
+            footer: '<a href>Why do I have this issue?</a>'
+          }).then (function(){
+            window.location.href="/utilisateurs";
+          })
+        }
+      }
+    );
+  }
 }

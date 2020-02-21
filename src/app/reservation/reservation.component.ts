@@ -11,7 +11,7 @@ import Swal from 'sweetalert2'
 })
 export class ReservationComponent implements OnInit {
   newResa: Reservation= new Reservation();
-  condition=false;
+
 
   constructor(private reservationService: ReservationService, private route: Router) { }
 
@@ -20,7 +20,7 @@ export class ReservationComponent implements OnInit {
   }
 
   ReserverTable(id:number){
-    this.condition=true;
+   
     this.reservationService.ajouter(this.newResa).subscribe(
       data=>{
         Swal.fire({
@@ -30,9 +30,8 @@ export class ReservationComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500,
         })
-        console.log(this.newResa)
         this.ngOnInit();
-      }
-    )
+      });
+    
   }
 }

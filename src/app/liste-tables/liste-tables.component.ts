@@ -54,8 +54,7 @@ export class ListeTablesComponent implements OnInit {
               'la table a été retiré de la liste',
               'success'
             )
-            this.ngOnInit();
-          }
+            this.ngOnInit();}
         );
   
       }
