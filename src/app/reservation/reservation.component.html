@@ -180,7 +180,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="name" name="nom"
-                                                [(ngModel)]="newResa.nom" placeholder="votre nom" required
+                                                [(ngModel)]="newResa.nom" [(ngModel)]="newclients.nom"  placeholder="votre nom" required
                                                 data-error="Please enter your name">
                                             <div class="help-block with-errors"></div>
                                         </div>
@@ -189,7 +189,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <input type="text" placeholder="Veuillez entrer un numero de telephone" id="phone" class="form-control"
-                                                name="telephone" [(ngModel)]="newResa.telephone" required
+                                                name="telephone" [(ngModel)]="newResa.telephone" [(ngModel)]="newclients.telephone"required
                                                 data-error="">
                                             <div class="help-block with-errors"></div>
                                         </div>

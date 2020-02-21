@@ -1,4 +1,5 @@
 import { Clients } from './clients';
+import { Tables } from './tables';
 
 export class Reservation{
     idReservation:number;
@@ -7,5 +8,7 @@ export class Reservation{
     NbrePersonne: number;
     dateDeResa:Date;
     heure:any;
+    clients:Clients
+    table:Tables
  
 }

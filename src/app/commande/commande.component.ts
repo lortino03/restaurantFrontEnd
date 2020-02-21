@@ -28,7 +28,6 @@ export class CommandeComponent implements OnInit {
         console.log(data)
       }
     )
-
   }
 
   AjouterCommande(){
