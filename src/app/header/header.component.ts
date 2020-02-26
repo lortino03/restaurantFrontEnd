@@ -13,7 +13,8 @@ export class HeaderComponent implements OnInit {
   vartoken;
   Helper = new JwtHelperService();
   condition: boolean;
-  decodeToken;
+  decodeToken :Employes=new Employes;
+  showAdmin:boolean=false;
 
   constructor(private router:Router) {
     
@@ -36,7 +37,9 @@ export class HeaderComponent implements OnInit {
     this.vartoken = localStorage.getItem("token")
     //  Decode ces données et je les mets dans mon new utilisateur
     this.newEmploye = this.Helper.decodeToken(this.vartoken);
-    console.log(this.newEmploye);
+    if(this.vartoken.status=="Manager"){
+      this.showAdmin=true;
+    }  
   }
 
   logout() {

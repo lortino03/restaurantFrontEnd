@@ -4,11 +4,11 @@
 
 </head>
 
-<body style="background-color: rgb(46, 214, 172);">
-    <h1 align="center">LISTE DES EMPLOYES</h1>
-    <div class="container" id="MonTableau">
-        <h2>Filtre</h2>
-        <p>Type something in the input field to search the table for first names, last names or emails:</p>
+<body >
+    <h1 align="center"><i>Les employés</i></h1>
+    <div class="container" id="MonTableau" style="background-color: rgb(214, 183, 46);">
+        <h2><i>Filtre</i></h2>
+        <p>Taper le nom recherché dans le champs </p>
         <input class="form-control" id="myInput" type="text" placeholder="Search..">
         <br>
         <table class="table table-bordered">
@@ -27,14 +27,12 @@
                     <td>{{Employes.status}}</td>
                     <td align="center"><button type="button" class="btn btn-outline-danger"
                             (click)="SupprimerEmployes(Employes.idEmploye)">Supprimer</button>
-                        <a type="button" href="{{'http://localhost:4200/detail-employes/'+Employes.idEmploye}}"
-                            class="btn btn-outline-success">Consulter</a>
+                       
                         <a type="button" href="{{'http://localhost:4200/modifier-employes/'+Employes.idEmploye}}"
                             class="btn btn-outline-primary">Modifier</a>
-                        <a type="button" href="{{'http://localhost:4200/livres-auteur/'+Employes.idEmploye}}"
-                            class="btn btn-outline-primary">Afficher</a>
+                        
                     </td>
-                    <td></td>
+                   
                 </tr>
             </tbody>
             <button type="button" class="btn btn-outline-info">

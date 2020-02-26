@@ -9,6 +9,6 @@ export class Reservation{
     dateDeResa:Date;
     heure:any;
     clients:Clients
-    table:Tables
+    tables:Tables
  
 }

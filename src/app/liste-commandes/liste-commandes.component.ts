@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommandeService } from '../services/commande.service';
 import { Commande } from '../models/commande';
 import Swal from 'sweetalert2'
+import { Plats } from '../models/plats';
+import { PlatsService } from '../services/plats.service';
 declare var $: any;
 
 
@@ -12,14 +14,21 @@ declare var $: any;
 })
 export class ListeCommandesComponent implements OnInit {
   listCommande: Commande[] = [];
+  lisPlat: Plats[]=[];
 
-  constructor(private commandeService: CommandeService) { }
+  constructor(private commandeService: CommandeService, private platsService:PlatsService) { }
 
   ngOnInit() {
     this.commandeService.ToutAfficher().subscribe(
       data => {
         this.listCommande = data;
         console.log(data);
+        this.platsService.ToutAfficher().subscribe(
+          data=>{
+            this.lisPlat=data;
+            console.log(data)
+          }
+        )
       }
     );
     $(document).ready(function () {

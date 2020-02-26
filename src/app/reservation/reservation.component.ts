@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Reservation } from '../models/reservation';
 import { ReservationService } from '../services/reservation.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2'
 import { Clients } from '../models/clients';
 import { ClientsService } from '../services/clients.service';
@@ -19,9 +19,13 @@ export class ReservationComponent implements OnInit {
   telephone: string;
 
   constructor(private reservationService: ReservationService,
-    private clientsService: ClientsService, private route: Router) { }
+    private clientsService: ClientsService, private route: ActivatedRoute) { 
+      this.idclients=parseInt(this.route.snapshot.paramMap.get('idClients'))
+     
+    }
 
   ngOnInit() {
+   
 
   }
   
@@ -31,7 +35,9 @@ export class ReservationComponent implements OnInit {
     this.newResa.nom=this.newclients.nom;
     this.newResa.telephone=this.newclients.telephone;
       this.clientsService.ajouter(this.newclients).subscribe(
-      data=>{ Swal.fire({
+      data=>{ 
+       // this.newclients.idClients=this.newResa.clients.idClients;
+        Swal.fire({
         position: 'top-end',
         icon: 'success',
         title: 'Votre réservation a été enregistrée ',

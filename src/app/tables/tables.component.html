@@ -20,10 +20,12 @@
         </tr>
         <tr>
             <div class="form-group row">
-                <label for="status" class="col-sm-5 col-form-label">Serveur Associé</label>
+                <div class="col-sm-10">
+                <label for="status" class="col-sm-5 col-form-label">Serveur</label>
                 <select class="form-control" name="Employes" [(ngModel)]="idemploye" id="idemploye" style="width : 250px;" style="background-color:rgb(205, 209, 233);">
-                    <option *ngFor="let employe of listEmployes" [(ngValue)]="employe.idEmploye">{{employe.idEmploye}}</option>
+                    <option *ngFor="let employe of listEmployes" [(ngValue)]="employe.idEmploye">{{employe.nom}}</option>
                 </select>
+            </div>
             </div>
         </tr>
         

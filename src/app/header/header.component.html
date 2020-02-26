@@ -1,59 +1,107 @@
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="http://localhost:4200/home">
-        <img src="assets/images/logo.png" alt="" />
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbars-rs-food">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown-a">
-              <a class="dropdown-item" href="http://localhost:4200/reservation">Reservation</a>
-              <a class="dropdown-item" href="http://localhost:4200/employes">Employes</a>
-              <a class="dropdown-item" href="http://localhost:4200/clients">clients</a>
-              <a class="dropdown-item" href="http://localhost:4200/commande">commande</a>
-              <a class="dropdown-item" href="http://localhost:4200/plats">plats</a>
-              <a class="dropdown-item" href="http://localhost:4200/tables">tables</a>
-              <a class="dropdown-item" href="http://localhost:4200/connexion">connexion</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Management</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-              <a class="dropdown-item" href="http://localhost:4200/liste-clients">liste des clients</a>
-              <a class="dropdown-item" href="http://localhost:4200/liste-employes">liste des employes</a>
-              <a class="dropdown-item" href="http://localhost:4200/reservation">Reserver une table</a>
-              <a class="dropdown-item" href="http://localhost:4200/liste-plats">Menus</a>
-              <a class="dropdown-item" href="http://localhost:4200/liste-tables">les Tables</a>
-              <a class="dropdown-item" href="http://localhost:4200/liste-commandes">les commandes</a>
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            </div>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+  <!-- Site Metas -->
+  <title>LE BARATIE - Responsive HTML5 Template</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Site Icons -->
+  <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="../../assets/css/responsive.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+  <header >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: burlywood;">
+      <div class="container">
+        <a class="navbar-brand" href="http://localhost:4200/home"><img src="../../assets/images/bara.png" alt="" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food"
+          aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbars-rs-food">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" href="http://localhost:4200/home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="http://localhost:4200/menu">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="http://localhost:4200/reservation">Reservation</a></li>
+
+            <li class="nav-item dropdown" *ngIf="condition">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Gestion</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                <a class="dropdown-item" href="http://localhost:4200/employes">Employes</a>
+                <a class="dropdown-item" href="http://localhost:4200/clients">Clients</a>
+                <a class="dropdown-item" href="http://localhost:4200/commande">Commande</a>
+                <a class="dropdown-item" href="http://localhost:4200/plats">Plats</a>
+                <a class="dropdown-item" href="http://localhost:4200/tables">Tables</a>
+              
+              </div>
+            </li>
+            <li class="nav-item dropdown" *ngIf="condition">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Management</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown-a">
+
+                <a class="dropdown-item" href="http://localhost:4200/liste-clients">Liste des clients</a>
+                <a class="dropdown-item" href="http://localhost:4200/liste-employes">Liste des employes</a>
+                <a class="dropdown-item" href="http://localhost:4200/liste-plats">Menus</a>
+                <a class="dropdown-item" href="http://localhost:4200/liste-tables">Les Tables</a>
+                <a class="dropdown-item" href="http://localhost:4200/liste-commandes">Les commandes</a>
+                <a class="dropdown-item" href="http://localhost:4200/calendrier-reservations">Liste des
+                  reservations</a>
+              </div>
+            </li>
+            <!---  <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>-->
+          </ul>
+        </div>
+        <form class="form-inline my-2 my-lg-5">
+          <div *ngIf="!condition"> <a href="http://localhost:4200/connexion">Se connecter</a></div>
+          <div class="nav-link"><a>{{newEmploye?.idLogin}}</a></div>
+        </form>
+        <div class="d-flex justify-content-center mt-3 login_container" *ngIf="condition">
+          <a type="button"class="nav-link" (click)="logout()">Se deconnecter</a>
+        </div>
       </div>
-      <form class="form-inline my-2 my-lg-5">
-       <button>
-          <a class="dropdown-item" href="http://localhost:4200/connexion">Se connecter</a>
-          <div class="nav-link" >{{newEmploye?.idLogin}}</div></button>
-      </form>
-      <div class="d-flex justify-content-center mt-3 login_container" *ngIf="condition">
-        <button type="button" name="button" class="btn btn-info"  (click)="logout()">Se deconnecter</button>
-      </div>
-    </div>
-  </nav>
+    </nav>
   </header>
-  <br>
 
- 
+  <!-- ALL JS FILES -->
+  <script src="../../assets/js/jquery-3.2.1.min.js"></script>
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  <!-- ALL PLUGINS -->
+  <script src="../../assets/js/jquery.superslides.min.js"></script>
+  <script src="../../assets/js/images-loded.min.js"></script>
+  <script src="../../assets/js/isotope.min.js"></script>
+  <script src="../../assets/js/baguetteBox.min.js"></script>
+  <script src="../../assets/js/form-validator.min.js"></script>
+  <script src="../../assets/js/contact-form-script.js"></script>
+  <script src="../../assets/js/custom.js"></script>
+</body>
 
-  
+</html>
+<br>

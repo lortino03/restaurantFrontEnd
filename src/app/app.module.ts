@@ -24,7 +24,10 @@ import { ListePlatsComponent } from './liste-plats/liste-plats.component';
 import { ModifierPlatsComponent } from './modifier-plats/modifier-plats.component';
 import { ListeTablesComponent } from './liste-tables/liste-tables.component';
 import { ConnexionComponent } from './connexion/connexion.component';
-import { CalendrierReservationsComponent } from './calendrier-reservations/calendrier-reservations.component'
+import { CalendrierReservationsComponent } from './calendrier-reservations/calendrier-reservations.component';
+import { MenuComponent } from './menu/menu.component';
+
+
 
 @NgModule({
   declarations: [
@@ -49,13 +52,15 @@ import { CalendrierReservationsComponent } from './calendrier-reservations/calen
     ModifierPlatsComponent,
     ListeTablesComponent,
     ConnexionComponent,
-    CalendrierReservationsComponent
+    CalendrierReservationsComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+     
   ],
   providers: [],
   bootstrap: [AppComponent]

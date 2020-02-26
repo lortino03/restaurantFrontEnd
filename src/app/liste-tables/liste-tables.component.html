@@ -4,8 +4,8 @@
 
 </head>
 
-<body style="background-color: rgb(46, 214, 172);">
-    <h1 align="center">LISTE DES TABLES</h1>
+<body style="background-color: rgb(255, 255, 255);">
+    <h1 align="center"><i>LISTE DES TABLES</i></h1>
     <div class="container" id="MonTableau">
         <h2>Filtre</h2>
         <p>Type something in the input field to search the table for first names, last names or emails:</p>
@@ -26,8 +26,7 @@
                     <td>{{Tables.nbrePlace}}</td>
                     <td>{{Tables.employes.nom}}</td>
                     <td align="center"><button type="button" class="btn btn-outline-danger"(click)="SupprimerTables(Tables.idTable)">Supprimer</button>
-                        <a type="button" href="{{'http://localhost:4200/detail-plats/'+Tables.idPlats}}"
-                            class="btn btn-outline-success">Consulter</a>
+    
                         <a type="button" href="{{'http://localhost:4200/modifier-tables/'+Tables.idTable}}"
                             class="btn btn-outline-primary">Modifier</a>                   
                     </td>

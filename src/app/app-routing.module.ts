@@ -18,12 +18,16 @@ import { ModifierPlatsComponent } from './modifier-plats/modifier-plats.componen
 import { HomeComponent } from './home/home.component';
 import { ListeTablesComponent } from './liste-tables/liste-tables.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { CalendrierReservationsComponent } from './calendrier-reservations/calendrier-reservations.component';
+import { MenuComponent } from './menu/menu.component';
+import{AuthGuardService} from './services/auth-guard.service' 
 
 
 const routes: Routes = [
   {
     path:"clients",
-    component:ClientsComponent
+    component:ClientsComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:"home",
@@ -32,7 +36,8 @@ const routes: Routes = [
   },
   {
     path:"commande",
-    component:CommandeComponent
+    component:CommandeComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:"plats",
@@ -40,11 +45,13 @@ const routes: Routes = [
   },
   {
     path:"employes",
-    component:EmployesComponent
+    component:EmployesComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path: "tables",
-    component:TablesComponent
+    component:TablesComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path: "reservation",
@@ -52,35 +59,43 @@ const routes: Routes = [
   },
   {
     path: "liste-clients",
-    component:ListeClientsComponent
+    component:ListeClientsComponent,
+    canActivate:[AuthGuardService]
   }
   ,{
     path:"liste-employes",
-    component:ListeEmployesComponent
+    component:ListeEmployesComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:"liste-commandes",
-    component:ListeCommandesComponent
+    component:ListeCommandesComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:"modifier-clients/:idClients", // toujours ecrire l'id comme dans postman
-    component:ModifierClientsComponent
+    component:ModifierClientsComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:"modifier-employes/:idEmploye", // toujours ecrire l'id comme dans postman
-    component:ModifierEmployesComponent
+    component:ModifierEmployesComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:"modifier-commande/:idCommande", // toujours ecrire l'id comme dans postman
-    component:ModifierCommandeComponent
+    component:ModifierCommandeComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:"modifier-plats/:idPlats", // toujours ecrire l'id comme dans postman
-    component:ModifierPlatsComponent
+    component:ModifierPlatsComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:"modifier-tables/:idTable", // toujours ecrire l'id comme dans postman
-    component: ModifierTablesComponent
+    component: ModifierTablesComponent,
+    canActivate:[AuthGuardService]
   },
   
   {
@@ -89,11 +104,21 @@ const routes: Routes = [
   },
   {
     path:"liste-tables",
-    component:ListeTablesComponent
+    component:ListeTablesComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:"connexion",
     component:ConnexionComponent
+  },
+  {
+    path:"calendrier-reservations",
+    component:CalendrierReservationsComponent,
+    canActivate:[AuthGuardService]
+  },
+  {
+    path:"menu",
+    component:MenuComponent
   }
 ];
 

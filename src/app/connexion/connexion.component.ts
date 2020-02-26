@@ -58,7 +58,6 @@ export class ConnexionComponent implements OnInit {
   }
 
   SeconnectToken() {
-    
     this.employesService.getByLoginToken(this.newEmployes).subscribe(
       data => {
         this.newEmployes.login=data;
@@ -82,7 +81,7 @@ export class ConnexionComponent implements OnInit {
             text: 'pwd ou login incorrect!',
             footer: '<a href>Why do I have this issue?</a>'
           }).then (function(){
-            window.location.href="/utilisateurs";
+            window.location.href="/connexion";
           })
         }
       }

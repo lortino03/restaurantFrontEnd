@@ -5,6 +5,8 @@ import { CommandeService } from '../services/commande.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TablesService } from '../services/tables.service';
 import Swal from 'sweetalert2'
+import { Plats } from '../models/plats';
+import { PlatsService } from '../services/plats.service';
 
 @Component({
   selector: 'app-commande',
@@ -17,8 +19,14 @@ export class CommandeComponent implements OnInit {
   idTable: number;
   table: Tables;
   listTables:Tables []=[];
-  constructor(private commandeService: CommandeService, private route: ActivatedRoute, private tableService: TablesService) {
+  newPlats: Plats=new Plats();
+  ListePlats:Plats[]=[];
+  idPlat:number;
+  
+  constructor(private commandeService: CommandeService, private route: ActivatedRoute,private platService:PlatsService,
+     private tableService: TablesService) {
     this.idTable = parseInt(this.route.snapshot.paramMap.get("idTables"))
+    this.idPlat=parseInt(this.route.snapshot.paramMap.get('idPlats'))
   }
 
   ngOnInit() {
@@ -26,30 +34,43 @@ export class CommandeComponent implements OnInit {
       data=>{
         this.listTables=data;
         console.log(data)
-      }
-    )
+      });
+      this.platService.ToutAfficher().subscribe(
+        data=>{
+          this.ListePlats=data;
+          console.log(data)
+        }
+      )
   }
 
   AjouterCommande(){
-    this.tableService.RecupUn(this.idTable).subscribe(
+    this.platService.RecupUn(this.idPlat).subscribe(
       data=>{
-        this.table=data;
-        console.log(this.table)
-        this.newCommande.tables=this.table
-        this.commandeService.ajouter(this.newCommande).subscribe(
+        this.newPlats=data;
+        this.newCommande.plats=this.newPlats;
+        console.log(data)
+        this.tableService.RecupUn(this.idTable).subscribe(
           data=>{
+            this.newTable=data;
+            this.newCommande.tables=this.newTable;
             console.log(data)
-            Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'commande ajoutée avec succès',
-              showConfirmButton: false,
-              timer: 1500
-            })
+            this.commandeService.ajouter(this.newCommande).subscribe(
+              data=>{
+                console.log(data)
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'commande ajoutée avec succès',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+              }
+            )
           }
         )
       }
     )
+   
   }
 
 }

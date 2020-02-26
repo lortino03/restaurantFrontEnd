@@ -1,29 +1,42 @@
-<h2 align="center">Ajouter une nouvelle commande</h2>
+<h2 align="center"> <i>Ajouter une nouvelle commande</i></h2>
 <div class="container">
     <form>
         <div class="form-group row">
-            <label for="nom" class="col-sm-2 col-form-label">Nom</label>
-            <div class="col-sm-10">
-                <input type="text" name="nom" [(ngModel)]="newCommande.nom" class="form-control" id="idnom">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="prenom" class="col-sm-2 col-form-label">Date</label>
-            <div class="col-sm-10">
-                <input type="date" name="dateDeCommande" [(ngModel)]="newCommande.dateDeCommande" class="form-control" id="idprenom">
-            </div>
-            <div class="form-group row">
-                <label for="status" class="col-sm-2 col-form-label">table</label>
-                <select class="form-control" name="Tables" [(ngModel)]="idTable" id="idtable">
-                    <option *ngFor="let tables of listTables" [(ngValue)]="tables.idTable">{{tables.idTable}}</option>
+            <label for="nom" class="col-sm-2 col-form-label">Plats</label>
+            <div class="col-sm-5">
+                <select class="form-control" name="plats" [(ngModel)]="idPlats" id="idplas" class="form-control">
+                    <option *ngFor="let Plats of ListePlats" [(ngValue)]="Plats.idPlat" class="form-control">{{Plats.libelle}} </option>
                     <!--tables et idTable ici sont ceux  que j'ai instancié dans le component.ts-->
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary" (click)="AjouterCommande()">Ajouter!</button>
         </div>
+        <div class="form-group row">
+            <label for="nom" class="col-sm-2 col-form-label">Quantite</label>
+            <div class="col-sm-5">
+                <input type="text" name="quantite" [(ngModel)]="newCommande.quantite" class="form-control" id="idquant">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="nom" class="col-sm-2 col-form-label">Tables</label>
+            <div class="col-sm-5">
+                <select class="form-control" name="tables" [(ngModel)]="idTable" id="idtable" class="form-control">
+                    <option *ngFor="let tables of listTables" [(ngValue)]="tables.idTable" class="form-control">{{tables.numero}} </option>
+                    <!--tables et idTable ici sont ceux  que j'ai instancié dans le component.ts-->
+                </select>
+            </div>
+        </div>
+       
+        <div class="form-group row">
+            <label for="prenom" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-sm-5">
+                <input type="date" name="dateDeCommande" [(ngModel)]="newCommande.dateDeCommande" class="form-control"
+                    id="idprenom">
+            </div>           
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="AjouterCommande()">Ajouter!</button>
     </form>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div class="col-sm-10">
-    
+
 </div>

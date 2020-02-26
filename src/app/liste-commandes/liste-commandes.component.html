@@ -11,26 +11,30 @@
         <p>Type something in the input field to search the table for first names, last names or emails:</p>
         <input class="form-control" id="myInput" type="text" placeholder="Search..">
         <br>
-        <table class="table table-bordered">
+        <table class="table table-bordered" align="center">
             <thead class="thead-dark">
                 <tr align="center">
                     <th scope="col">DATE DE COMMANDE </th>
                     <th scope="col">TABLE</th>
+                    <th scope="col">PLATS</th>
+                    <th scope="col">CATEGORIE</th>
+                    <th scope="col">QUANTITE</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
-            <tbody id="myTable">
+            <tbody id="myTable" align="center">
                 <tr *ngFor="let Commande of listCommande"> <!-- normalement je met let (variable declaré) mais en absence je mets la classe-->
                     <td>{{Commande.dateDeCommande}}</td>
-                    <td>{{Commande.tables.nbrePlace}}</td>
+                    <td>{{Commande.tables.numero}}</td>
+                    <td>{{Commande.plats.libelle}}</td>
+                    <td>{{Commande.plats.categorie}}</td>
+                    <td>{{Commande.quantite}}</td>
                     <td align="center"><button type="button" class="btn btn-outline-danger"
                             (click)="SupprimerCommande(Commande.idCommande)">Supprimer</button>
                         <a type="button" href="{{'http://localhost:4200/detail-auteurs/'+Commande.idCommande}}"
                             class="btn btn-outline-success">Consulter</a>
                         <a type="button" href="{{'http://localhost:4200/modifier-commande/'+Commande.idCommande}}"
                             class="btn btn-outline-primary">Modifier</a>
-                        <a type="button" href="{{'http://localhost:4200/livres-auteur/'+Commande.idCommande}}"
-                            class="btn btn-outline-primary">Afficher</a>
                     </td>
                     <td></td>
                 </tr>
