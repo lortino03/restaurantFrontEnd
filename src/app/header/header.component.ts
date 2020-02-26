@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Employes } from '../models/employes';
 import { JwtHelperService } from "@auth0/angular-jwt";
-import { NavigationStart, Router } from '@angular/router';
+import { NavigationStart, Router, ActivatedRoute } from '@angular/router';
+import { EmployesService } from '../services/employes.service';
 
 @Component({
   selector: 'app-header',
@@ -9,42 +10,65 @@ import { NavigationStart, Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  newEmploye: Employes=new Employes();
+  condition: Boolean;
+  condition2: Boolean;
+  condition3: Boolean;
+  idEmploye: number;
+  newEmploye: Employes = new Employes();
   vartoken;
-  Helper = new JwtHelperService();
-  condition: boolean;
-  decodeToken :Employes=new Employes;
-  showAdmin:boolean=false;
+  helper = new JwtHelperService();
+  decodedToken;
+  type;
 
-  constructor(private router:Router) {
-    
+  constructor(private employesService: EmployesService,
+    private router: Router, private route: ActivatedRoute) {
     router.events.forEach(
       event => {
+        this.vartoken = this.helper.decodeToken(localStorage.getItem('token'));
         if (event instanceof NavigationStart) {
-          console.log(event['url'])
-
-          if (localStorage.getItem("token")) {
-            this.condition = true;
-          } else {
+          if (localStorage.length == 0) {
             this.condition = false;
+          } else {
+            this.condition = true;
+          }
+        }
+      })
+      
+    router.events.forEach(
+      event => {
+        this.vartoken = this.helper.decodeToken(localStorage.getItem('token'));
+        if (event instanceof NavigationStart) {
+          if (this.vartoken.status == "Manager") {
+            this.condition2 = true;
+          } else {
+            this.condition2 = false;
           }
         }
       }
     )
-   }
 
+    router.events.forEach(
+      event => {
+        this.vartoken = this.helper.decodeToken(localStorage.getItem('token'));
+        if (event instanceof NavigationStart) {
+          if (this.vartoken.status == "Serveur") {
+            this.condition3 = true;
+          } else {
+            this.condition3 = false;
+          }
+        }
+      }
+    )
+
+  }
   ngOnInit() {
-    this.vartoken = localStorage.getItem("token")
-    //  Decode ces données et je les mets dans mon new utilisateur
-    this.newEmploye = this.Helper.decodeToken(this.vartoken);
-    if(this.vartoken.status=="Manager"){
-      this.showAdmin=true;
-    }  
+    this.vartoken = this.helper.decodeToken(localStorage.getItem('token'));
+
   }
 
   logout() {
     localStorage.removeItem("token");
-    window.location.href="/home"
+    window.location.href = "/home"
   }
 
 }

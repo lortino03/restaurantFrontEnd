@@ -22,7 +22,6 @@ export class PlatsComponent implements OnInit {
   }
 
   AjouterPlats() {
-
     this.platsService.ajouter(this.newPlat).subscribe(
       data => {
         Swal.fire({

@@ -22,13 +22,13 @@ export class CommandeComponent implements OnInit {
   newPlats: Plats=new Plats();
   ListePlats:Plats[]=[];
   idPlat:number;
+  plats: Plats;
   
   constructor(private commandeService: CommandeService, private route: ActivatedRoute,private platService:PlatsService,
      private tableService: TablesService) {
     this.idTable = parseInt(this.route.snapshot.paramMap.get("idTables"))
     this.idPlat=parseInt(this.route.snapshot.paramMap.get('idPlats'))
   }
-
   ngOnInit() {
     this.tableService.ToutAfficher().subscribe(
       data=>{
@@ -42,7 +42,6 @@ export class CommandeComponent implements OnInit {
         }
       )
   }
-
   AjouterCommande(){
     this.platService.RecupUn(this.idPlat).subscribe(
       data=>{
